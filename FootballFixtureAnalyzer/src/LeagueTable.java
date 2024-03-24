@@ -27,27 +27,7 @@ public class LeagueTable extends Fixture{
 	clubs.put(awayTeamName, awayTeam);
 	}
 	
-	/*public void printLeagueTable(HashMap<String, Club> clubs) {
-//sort the club with respect to their total points.if points of two team in the league are equal then compare to goal
-//difference , if the differences are equal then compare to goals for.		
-		
-		List<Club> sortedClubs = new ArrayList<>(clubs.values());
-	    sortedClubs.sort(Comparator.comparingInt(Club::getPoint).reversed()
-	            .thenComparingInt(Club::getGoalsDifference).reversed()
-	            .thenComparingInt(Club::getGoalsFor).reversed());
-
-	    
-	    System.out.printf("%-10s %-30s %-10s %-10s %-10s %-10s %-7s %-7s %-7s %-10s%n", "Position", "Club", "Played", "Won", "Drawn", "Lost", "GF", "GA", "GD", "Points");
-	    
-	    int position = 1;
-	    for (Club club : sortedClubs) {
-	    	club.setPosition(position++);
-	    	System.out.printf("%-10d %-30s %-10d %-10d %-10d %-10d %-7d %-7d %-7d %-10d%n", club.getPosition(), club.getClubName(),
-                     club.getPlayed(), club.getWon(), club.getDrawn(), club.getLoss(), club.getGoalsFor(),
-                     club.getGoalsAgainst(), club.getGoalsDifference(), club.getPoint());
 	
-	    }
-	}*/
 	public void printLeagueTable(HashMap<String, Club> clubs) {
 	    // Sort the clubs with respect to their total points. If points of two teams in the league are equal, then compare to goal
 	    // difference. If the differences are equal, then compare to goals for.
