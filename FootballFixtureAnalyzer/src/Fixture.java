@@ -102,6 +102,8 @@ int homePoint=homeTeam.getPoint();
 int awayPoint=awayTeam.getPoint();
 int homePlayed=homeTeam.getPlayed();
 int awayPlayed=awayTeam.getPlayed();
+String homeFormResult=homeTeam.getFormResult();
+String awayFormResult=awayTeam.getFormResult();
 if(homeTeamGoal > awayTeamGoal) {
 //if home team scores more than away team this means that the winner of the competition is home team which leads to
 //home team gets 3 points,away team gets no point, and the total number won games of home team increments by 1 ,the total
@@ -116,6 +118,10 @@ if(homeTeamGoal > awayTeamGoal) {
  
 	homeTeamAgainst=homeTeamAgainst+awayTeamGoal; 
 awayTeamAgainst=awayTeamAgainst+homeTeamGoal;	
+homeFormResult="W";
+awayFormResult="L";
+homeTeam.setFormResult(homeFormResult);
+awayTeam.setFormResult(awayFormResult);
 
 
 homeTeam.setGoalsFor(homeTeamGoalsFor);
@@ -145,6 +151,12 @@ awayTeam.setPoint(awayPoint);
 homeTeamAgainst=homeTeamAgainst+awayTeamGoal; 
 awayTeamAgainst=awayTeamAgainst+homeTeamGoal;	
 
+homeFormResult="L";
+awayFormResult="W";
+
+homeTeam.setFormResult(homeFormResult);
+awayTeam.setFormResult(awayFormResult);
+
 homeTeam.setGoalsFor(homeTeamGoalsFor);
 awayTeam.setGoalsFor(awayTeamGoalsFor);
 homeTeam.setGoalsAgainst(homeTeamAgainst);
@@ -172,6 +184,12 @@ awayTeam.setPoint(awayPoint);
 homeTeamAgainst=homeTeamAgainst+awayTeamGoal; 
 awayTeamAgainst=awayTeamAgainst+homeTeamGoal;	
 
+homeFormResult="D";
+awayFormResult="D";
+
+homeTeam.setFormResult(homeFormResult);
+awayTeam.setFormResult(awayFormResult);
+
 homeTeam.setGoalsFor(homeTeamGoalsFor);
 awayTeam.setGoalsFor(awayTeamGoalsFor);
 homeTeam.setGoalsAgainst(homeTeamAgainst);
@@ -194,6 +212,9 @@ homePlayed=homePlayed+1;
 	awayPlayed=awayPlayed+1;
 homeTeam.setPlayed(homePlayed);
 awayTeam.setPlayed(awayPlayed);	
+
+homeTeam.addFormToClub(homeFormResult);	//add form result to queue for home team
+awayTeam.addFormToClub(awayFormResult);	//add form result to queue for away team
 	}
 }
 }
