@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 public class Main {
-	// Title: Main class
+		// Title: Main class
 	// Author: Arda Baran
    // Description: In this class ,2022/2023 Premier League fixture csv file which consists of 380 matches and 38 weeks
 //and 20 different teams and their scores is opened and proccessed.
@@ -29,6 +29,7 @@ System.out.println(" ===========================================================
 System.out.println("|    Press 1 To See 2022/2023 Premier League Season League Table                                       |");
 System.out.println("|    Press 2 To See 2022/2023 Premier League Season Champion,Qualified For Europe Cups,Relegated Teams |");
 System.out.println("|    Press 3 To See 2022/2023 Premier League Season Statistics                                         |");
+System.out.println("|    Press 4 To See 2022/2023 Premier League Season Club Forms                                         |");
 System.out.println(" =======================================================================================================");
 System.out.println("");
 System.out.print("Choice: ");
@@ -60,13 +61,27 @@ sc.close();
         //relegated teams ; print league statistics based on the choice.    
       switch(ch) {
       case 1 :           
+      System.out.println("                                              League Table                                                                                  ");
+      System.out.println();
+      
       league.printLeagueTable(clubs);
       break;
       case 2 :
+    	  System.out.println("                          League Champion , Qualified Teams For Europe Cups and Relegated Teams                                                                                  ");
+          System.out.println();
       league.printClubStatus(clubs);
       break;
       case 3 :
+    	  System.out.println("                                              League Statistics                                                                                  ");
+          System.out.println();
+    	  
       league.LeagueStatistics(clubs);
+      break;
+      case 4:
+    	  System.out.println("                                                       Form Of All Clubs Week By Week                                                                                  ");
+          System.out.println();
+    	  
+    	  league.printForm(clubs);
       break;
       default:
       System.out.println("Invalid Choice...");
